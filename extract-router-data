@@ -1,0 +1,214 @@
+Command: Extract Router Data
+
+Loopback is 1.1.1.1 for Router1
+
+ansible all -i 1.1.1.1, -c network_cli -u admin -k -m ios_facts -e ansible_network_os=ios
+
+
+####################################################
+
+Results-->
+
+
+1.1.1.1 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_net_all_ipv4_addresses": [
+            "192.168.56.1",
+            "192.168.56.33",
+            "192.168.56.65",
+            "1.1.1.1"
+        ],
+        "ansible_net_all_ipv6_addresses": [],
+        "ansible_net_api": "cliconf",
+        "ansible_net_filesystems": [],
+        "ansible_net_filesystems_info": {},
+        "ansible_net_gather_network_resources": [],
+        "ansible_net_gather_subset": [
+            "default",
+            "hardware",
+            "interfaces"
+        ],
+        "ansible_net_hostname": "R1",
+        "ansible_net_image": "tftp://255.255.255.255/unknown",
+        "ansible_net_interfaces": {
+            "FastEthernet0/0": {
+                "bandwidth": 10000,
+                "description": null,
+                "duplex": null,
+                "ipv4": [
+                    {
+                        "address": "192.168.56.1",
+                        "subnet": "27"
+                    }
+                ],
+                "lineprotocol": "up",
+                "macaddress": "c401.066c.0000",
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "up",
+                "type": "Gt96k FE"
+            },
+            "FastEthernet0/1": {
+                "bandwidth": 10000,
+                "description": null,
+                "duplex": null,
+                "ipv4": [
+                    {
+                        "address": "192.168.56.33",
+                        "subnet": "27"
+                    }
+                ],
+                "lineprotocol": "up",
+                "macaddress": "c401.066c.0001",
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "up",
+                "type": "Gt96k FE"
+            },
+            "FastEthernet1/0": {
+                "bandwidth": 100000,
+                "description": null,
+                "duplex": null,
+                "ipv4": [
+                    {
+                        "address": "192.168.56.65",
+                        "subnet": "27"
+                    }
+                ],
+                "lineprotocol": "up",
+                "macaddress": "c401.066c.0010",
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "up",
+                "type": "AmdFE"
+            },
+            "Loopback0": {
+                "bandwidth": 8000000,
+                "description": null,
+                "duplex": null,
+                "ipv4": [
+                    {
+                        "address": "1.1.1.1",
+                        "subnet": "24"
+                    }
+                ],
+                "lineprotocol": "up",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1514,
+                "operstatus": "up",
+                "type": null
+            },
+            "Serial0/0": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            },
+            "Serial0/1": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            },
+            "Serial0/2": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            },
+            "Serial2/0": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            },
+            "Serial2/1": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            },
+            "Serial2/2": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            },
+            "Serial2/3": {
+                "bandwidth": 1544,
+                "description": null,
+                "duplex": null,
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": null,
+                "mediatype": null,
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": null
+            }
+        },
+        "ansible_net_iostype": "IOS",
+        "ansible_net_memfree_mb": 149749.01171875,
+        "ansible_net_memtotal_mb": 169113.21875,
+        "ansible_net_model": "3745",
+        "ansible_net_neighbors": {
+            "FastEthernet0/1": [
+                {
+                    "host": "R2",
+                    "port": "FastEthernet0/0"
+                }
+            ],
+            "FastEthernet1/0": [
+                {
+                    "host": "R3",
+                    "port": "FastEthernet0/0"
+                }
+            ]
+        },
+        "ansible_net_python_version": "3.8.5",
+        "ansible_net_serialnum": "FTX0945W0MY",
+        "ansible_net_system": "ios",
+        "ansible_net_version": "12.4(25d)",
+        "ansible_network_resources": {},
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false
+}
+
