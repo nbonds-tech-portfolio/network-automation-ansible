@@ -1,0 +1,13 @@
+---
+- name: first cisco router playbook
+  hosts: routers
+  gather_facts: false
+  tasks:
+  - name: show ip addresses
+    ios_command:
+     commands: show ip int brief
+    register: output1
+  - name: print or display output
+    debug:
+     var: output1.stdout_lines
+
