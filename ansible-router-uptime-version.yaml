@@ -1,0 +1,13 @@
+---
+- name: first cisco router playbook
+  hosts: routers
+  gather_facts: false
+  tasks:
+  - name: show cisco router uptime (show how long the routers have been up)
+    ios_command:
+     commands: show version | i uptime
+    register: output1
+
+  - name: print or display output
+    debug:
+     var: output1.stdout_lines
