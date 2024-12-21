@@ -1,5 +1,5 @@
 ---
-- name: first cisco router playbook
+- name: cisco router playbook show ip int brief
   hosts: routers
   gather_facts: false
   tasks:
