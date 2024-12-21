@@ -1,5 +1,5 @@
 ---
-- name: cisco router playbook show version and uptime
+- name: cisco router playbook show version, uptime, and interfaces
   hosts: routers
   gather_facts: false
   tasks:
